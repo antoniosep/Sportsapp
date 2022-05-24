@@ -18,7 +18,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="main.html" >Home</a>
+                    <a class="navbar-brand" href="main.html">Home</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -43,6 +43,7 @@
             <section class="py-5">
                 <div class="container px-5 my-5">
                     <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Preguntas Generales</h1>
                         <h1 class="fw-bolder">Frequently Asked Questions</h1>
                         <p class="lead fw-normal text-muted mb-0">¿Como podemos ayudarte?</p>
                     </div>
@@ -52,20 +53,26 @@
                             <h2 class="fw-bolder mb-3">Rutinas & Ejercicios</h2>
                             <div class="accordion mb-5" id="accordionExample">
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Creación de Rutinas</button></h3>
-                                    <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <h3 class="accordion-header" id="headingOneOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneOne" aria-expanded="true" aria-controls="collapseOneOne">Cómo crear una Rutina</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOneOne" aria-labelledby="headingOneOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <strong>Crear Rutina desde "Mis Rutinas"</strong><br>
-                                            Para crear una rutina nueva podemos irnos a la sección "Mis Rutinas" en la barra de navegación. Veremos que en la parte superior hay un campo disponible para introducir el nombre. Tras escribir el nombre pulsaremos el botón "Añadir a Mis Rutinas".
-                                            <br>
+                                            <ol type="1">
+                                                <li>En la barra de navegación, accedemos a la sección <a href="/MisRutinas.html"><strong>Mis Rutinas</strong></a>.</li>
+                                                <li>En el campo de texto, introducimos el nombre que queremos para la rutina.</li>
+                                                <li>Pulsamos el botón <strong>Nueva Rutina</strong></li>
+                                            </ol>
                                             <strong>Crear Rutina a partir de un Ejercicio de la Comunidad</strong><br>
-                                            Tambien tenemos la opción de crear una nueva rutina si en la sección de Ejercicios de la Comunidad pulsamos el botón "Añadir a Rutina", tras lo que nos encontraremos en el caso anterior.
+                                            <ol type="1">
+                                                <li>Desde la sección <a href="/RutinasComunidad.html"><strong>Rutinas de la Comunidad</strong></a> pulsamos el botón <strong>Añadir a Rutina</strong>.</li>
+                                                <li>Seguiremos los mismos pasos que en el caso anterior</li>
+                                            </ol>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Añadir un Ejercicio a una de Mis Rutinas</button></h3>
-                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <h3 class="accordion-header" id="headingOneTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneTwo" aria-expanded="false" aria-controls="collapseOneTwo">Añadir un Ejercicio a una de Mis Rutinas</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOneTwo" aria-labelledby="headingOneTwo" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <strong>Añadir un Ejercicio desde el apartado Ejercicios de la Comunidad</strong><br>
                                             Una vez nos encontremos en la sección Ejercicios de la Comunidad, pulsaremos el botón Añadir a Rutina al lado del ejercicio que queramos añadir. Después seleccionaremos la rutina a la que deseamos asignar el ejercicio o crearemos una nueva rutina (Pregunta 1)
@@ -77,8 +84,8 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Borrado de Rutina y Ejercicios</button></h3>
-                                    <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <h3 class="accordion-header" id="headingOneThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneThree" aria-expanded="false" aria-controls="collapseOneThree">Borrado de Rutina y Ejercicios</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOneThree" aria-labelledby="headingOneThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <strong>Borrar una Rutina</strong><br>
                                             Debemos dirigirnos al apartado Mis Rutinas y pulsar el icono de una papelera al lado de la rutina que queramos eliminar
@@ -94,8 +101,8 @@
                             <h2 class="fw-bolder mb-3">Cuenta</h2>
                             <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Acceder a mi información personal</button></h3>
-                                    <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                    <h3 class="accordion-header" id="headingTwoOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoOne" aria-expanded="true" aria-controls="collapseTwoOne">Acceder a mi información personal</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwoOne" aria-labelledby="headingTwoOne" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
                                             <strong>Ver los datos de Mi Cuenta</strong><br>
                                             Para acceder a los datos e información de tu cuenta, debes pulsar en la barra de navegación en el apartado Mi Perfil, tras lo cual se abrirá un desplegable y pulsarás la opción Cuenta.
@@ -104,8 +111,8 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Cerrar Sesión</button></h3>
-                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                                    <h3 class="accordion-header" id="headingTwoTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">Cerrar Sesión</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwoTwo" aria-labelledby="headingTwoTwo" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
                                             <strong>Cerrar Sesión</strong><br>
                                             Para cerrar sesión, debes pulsar en la barra de navegación en el apartado Mi Perfil, tras lo cual se abrirá un desplegable y pulsarás la opción Cerrar Sesión.
