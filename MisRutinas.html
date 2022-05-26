@@ -55,28 +55,29 @@
         </div>
     </header>
 
+
     <div class="row mb-3">
         <div class="col-md-1  themed-grid-col align-self-start">
             <label>Nombre:</label>
         </div>
         <div class="col-md-8 themed-grid-col align-self-start">
-            <input type="text" id="buscador" name="buscador">
+            <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
         <div class="col-md-3 themed-grid-col align-self-center">
-            <button id="name"  name="name">Nueva Rutina</button>
+            <button onclick="addItem()" id="addRutina"  name="addRutina">Nueva Rutina</button>
         </div>
       </div>
-    
+    <div id="div-container">
     <div class="row mb-3">
         <div class="col-md-3 themed-grid-col align-self-start">
             <img src="flexiones.jpg" width="250" height="120">
         </div>
         <div class="col-md-4 themed-grid-col align-self-center">Rutina de pecho/espalda</div>
         <div class="col-md-2 themed-grid-col align-self-center">
-            <button id="vejrutina" name="vejrutina">Ver Ejercicios Rutina</button>
+            <button id="vejrutina1" name="vejrutina1">Ver Ejercicios Rutina</button>
         </div>
         <div class="col-md-3 themed-grid-col align-self-center">
-            <button id="delete" class="btn btn-danger" name="delete">Eliminar</button>
+            <button onclick="removeItem()" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
         </div>
       </div>
 
@@ -86,16 +87,14 @@
         </div>
         <div class="col-md-4 themed-grid-col align-self-center">Rutina completa 20 mins</div>
         <div class="col-md-2 themed-grid-col align-self-center">
-            <button id="vejrutina" name="vejrutina">Ver Ejercicios Rutina</button>
+            <button  id="vejrutina2" name="vejrutina2">Ver Ejercicios Rutina</button>
         </div>
         <div class="col-md-3 themed-grid-col align-self-center">
-            <button id="delete" class="btn btn-danger" name="delete">Eliminar</button>
+            <button onclick="removeItem()" id="delete2" class="btn btn-danger" name="delete2">Eliminar</button>
         </div>
       </div>
 
-    
-
-
+    </div>
 
 <!-- Footer-->
 <footer class="bg-dark py-4 mt-auto">
@@ -116,5 +115,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+    <script src="js/add.js"></script>
+</main>
 </body>
 </html>
