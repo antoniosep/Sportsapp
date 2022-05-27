@@ -11308,3 +11308,8 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+footer {
+  position: page;
+  bottom: 0;
+  width: 100%;
+}
