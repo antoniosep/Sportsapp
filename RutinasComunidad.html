@@ -58,11 +58,11 @@
     
     <div class="row mb-3">
         <div class="col-md-3 themed-grid-col align-self-start">
-            <img src="flexiones.jpg" width="250" height="120">
+            <img id="img1" src="flexiones.jpg" width="250" height="120">
         </div>
-        <div class="col-md-4 themed-grid-col align-self-center">Rutina de pecho/espalda</div>
+        <div id="texto1" class="col-md-4 themed-grid-col align-self-center">Rutina de pecho/espalda</div>
         <div class="col-md-2 themed-grid-col align-self-center">
-            <button id="adrutinas" name="adrutinas">Añadir a mis rutinas</button>
+            <button onclick="addRutina()" id="adrutinas" name="adrutinas">Añadir a mis rutinas</button>
         </div>
         <div class="col-md-2 themed-grid-col align-self-center">
             <button id="ejrutina" name="ejrutina">Ver ejercicios rutina</button>
@@ -75,10 +75,10 @@
         </div>
         <div class="col-md-4 themed-grid-col align-self-center">Rutina completa 20 mins</div>
         <div class="col-md-2 themed-grid-col align-self-center">
-            <button id="adrutinas" name="adrutinas">Añadir a mis rutinas</button>
+            <button onclick="addRutina1()" id="adrutinas1" name="adrutinas">Añadir a mis rutinas</button>
         </div>
         <div class="col-md-2 themed-grid-col align-self-center">
-            <button id="ejrutina" name="ejrutina">Ver ejercicios rutina</button>
+            <button id="ejrutina1" name="ejrutina">Ver ejercicios rutina</button>
         </div>
       </div>
     
@@ -101,5 +101,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+    <script src="js/add.js"></script>
+</main>
 </body>
 </html>
