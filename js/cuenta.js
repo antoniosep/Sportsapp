@@ -1,18 +1,12 @@
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+buttonLogin.addEventListener("click", ()=>{
+    logIn;
+    UsuarioName.textContent = "Horchata";
+}, false);
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDoeC-9JGgopEOqu_ePPBDqaeet8iNhRPQ",
-    authDomain: "iusportsapp.firebaseapp.com",
-    projectId: "iusportsapp",
-    storageBucket: "iusportsapp.appspot.com",
-    messagingSenderId: "419876832949",
-    appId: "1:419876832949:web:ad23b2f7289f261c0420fc"
-};
+buttonLogOut.addEventListener("click", logOut, false);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const UsuarioName = document.querySelector("#nombreUsuario");
+const UsuarioTag = document.querySelector("#tagUsuario");
+const UsuarioEmail = document.querySelector("#emailUsuario");
+const UsuarioId = document.querySelector("#idUsuario");
