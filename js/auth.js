@@ -1,14 +1,26 @@
-const buttonLogin = document.querySelector("#iniciarSesionButton");
-const buttonLogOut = document.querySelector("#cerrarSesionButton");
-
 function logIn(){
-    buttonLogin.style.display = "none";
-    buttonLogOut.style.display = "inline-flex";
+    var cuenta = {
+        Nombre: "Antonio Sepúlveda",
+        Email: "antoniosepulveda@uma.es",
+        Usuario: "antonio086"
+    }
+
+    console.log("login");
+    localStorage.setItem("cuenta", JSON.stringify(cuenta));
+    localStorage.setItem("auth", "true");
 }
 
 function logOut(){
-    buttonLogOut.style.display = "none";
-    buttonLogin.style.display = "inline-flex";
+    localStorage.setItem("cuenta", "");
+    localStorage.setItem("auth", "false");
 }
 
-
+function comprobarLogin(){
+    let auth;
+    try {
+        auth = localStorage.getItem("auth");
+    } catch (error) {
+        auth = "false";
+    }
+    return auth;
+}
