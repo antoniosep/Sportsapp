@@ -2,6 +2,9 @@ const buttonLogin = document.querySelector("#iniciarSesionButton");
 const buttonLogOut = document.querySelector("#cerrarSesionButton");
 
 if(comprobarLogin()=="true"){
+    if(localStorage.getItem("cuenta")==null || localStorage.getItem("cuenta")==""){
+        logIn();
+    }
     buttonLogin.style.display = "none";
     buttonLogOut.style.display = "inline-flex";
 }else{
@@ -10,9 +13,7 @@ if(comprobarLogin()=="true"){
 }
 
 buttonLogin.addEventListener("click", ()=>{
-    logIn();
-    buttonLogin.style.display = "none";
-    buttonLogOut.style.display = "inline-flex";
+    document.location.href="login.html"
 }, false);
 
 buttonLogOut.addEventListener("click", ()=>{
@@ -29,11 +30,9 @@ function logIn(){
     }
 
     localStorage.setItem("cuenta", JSON.stringify(cuenta));
-    localStorage.setItem("auth", "true");
 }
 
 function logOut(){
-    localStorage.setItem("cuenta", "");
     localStorage.setItem("auth", "false");
 }
 

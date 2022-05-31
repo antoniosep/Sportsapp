@@ -5,7 +5,7 @@ document.getElementById("myForm").addEventListener("submit", (e)=>{
     let password = document.querySelector("#floatingPassword");
     
     if(email.value=="antoniosepulveda@uma.es" && password.value=="12345"){
-        
+        localStorage.setItem("auth", true);
         document.location.href="index.html";
     }else{
         document.getElementById("myForm").reset();
