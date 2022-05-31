@@ -6,7 +6,9 @@ document.getElementById("myForm").addEventListener("submit", (e)=>{
     
     if(email.value=="antoniosepulveda@uma.es" && password.value=="12345"){
         localStorage.setItem("auth", true);
-        document.location.href="index.html";
+        let dir = localStorage.getItem("direccion");
+        localStorage.removeItem("direccion");
+        document.location.href=dir;
     }else{
         document.getElementById("myForm").reset();
     }
