@@ -1,5 +1,3 @@
-const buttonLogin = document.querySelector("#iniciarSesionButton");
-const buttonLogOut = document.querySelector("#cerrarSesionButton");
 
 if(comprobarLogin()=="true"){
     cambiarPagina(localStorage.getItem("cuenta"));
@@ -30,7 +28,7 @@ function cambiarPagina(cuentaJSON){
 
     var idUsuario =  document.querySelectorAll("#tagUsuario");
     for (let x of idUsuario){
-        x.textContent= cuenta["Usuario"];
+        x.textContent= "@"+cuenta["Usuario"];
     }
     document.querySelector("#emailUsuario").textContent = cuenta["Email"];
     

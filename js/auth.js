@@ -1,3 +1,26 @@
+const buttonLogin = document.querySelector("#iniciarSesionButton");
+const buttonLogOut = document.querySelector("#cerrarSesionButton");
+
+if(comprobarLogin()=="true"){
+    buttonLogin.style.display = "none";
+    buttonLogOut.style.display = "inline-flex";
+}else{
+    buttonLogin.style.display = "inline-flex";
+    buttonLogOut.style.display = "none";
+}
+
+buttonLogin.addEventListener("click", ()=>{
+    logIn();
+    buttonLogin.style.display = "none";
+    buttonLogOut.style.display = "inline-flex";
+}, false);
+
+buttonLogOut.addEventListener("click", ()=>{
+    logOut();
+    buttonLogin.style.display = "inline-flex";
+    buttonLogOut.style.display = "none";
+}, false);
+
 function logIn(){
     var cuenta = {
         Nombre: "Antonio Sepúlveda",
@@ -5,7 +28,6 @@ function logIn(){
         Usuario: "antonio086"
     }
 
-    console.log("login");
     localStorage.setItem("cuenta", JSON.stringify(cuenta));
     localStorage.setItem("auth", "true");
 }
