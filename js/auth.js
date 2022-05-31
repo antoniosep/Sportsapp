@@ -20,6 +20,7 @@ buttonLogOut.addEventListener("click", ()=>{
     logOut();
     buttonLogin.style.display = "inline-flex";
     buttonLogOut.style.display = "none";
+    document.location.href="index.html"
 }, false);
 
 function logIn(){
