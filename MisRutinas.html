@@ -70,42 +70,48 @@
             </div>
         </header>
 
-
-        <div class="row mb-3" style="margin-left: 15px;">
-            <div class="col-md-1  themed-grid-col align-self-center">
-                <label>Nombre:</label>
-            </div>
-            <div class="col-md-8 themed-grid-col align-self-start">
-                <input type="text" class="form-control" id="nombre" name="nombre">
-            </div>
-            <div class="col-md-3 themed-grid-col align-self-center">
-                <button onclick="addItem()" id="addRutina" name="addRutina">Nueva Rutina</button>
+        <div class = "container" style="padding-bottom: 5px;">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-1  themed-grid-col align-self-center">
+                    <label>Nombre:</label>
+                </div>
+                <div class="col-md-5 themed-grid-col align-self-start">
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="col-lg-2 themed-grid-col align-self-center">
+                    <button onclick="addItem()" id="addRutina" name="addRutina">Nueva Rutina</button>
+                </div>
             </div>
         </div>
         <div id="div-container">
-            <div class="row mb-3">
-                <div class="col-md-3 themed-grid-col align-self-start">
-                    <img src="flexiones.jpg" width="250" height="120">
-                </div>
-                <div class="col-md-4 themed-grid-col align-self-center">Rutina de pecho/espalda</div>
-                <div class="col-md-2 themed-grid-col align-self-center">
-                    <button id="vejrutina1" name="vejrutina1">Ver Ejercicios Rutina</button>
-                </div>
-                <div class="col-md-3 themed-grid-col align-self-center">
-                    <button onclick="removeItem()" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
+            <div class="card mb-3 mx-auto" style="width: 1000px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="flexiones.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Rutina de pecho/espalda</h5>
+                            <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
+                            <button id="vejrutina1" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
+                            <button onclick="removeItem()" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="row mb-3">
-                <div class="col-md-3 themed-grid-col ">
-                    <img src="abs.jpg" width="250" height="120">
-                </div>
-                <div class="col-md-4 themed-grid-col align-self-center">Rutina completa 20 mins</div>
-                <div class="col-md-2 themed-grid-col align-self-center">
-                    <button id="vejrutina2" name="vejrutina2">Ver Ejercicios Rutina</button>
-                </div>
-                <div class="col-md-3 themed-grid-col align-self-center">
-                    <button onclick="removeItem()" id="delete2" class="btn btn-danger" name="delete2">Eliminar</button>
+            <div class="card mb-3 mx-auto" style="width: 1000px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="abs.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Rutina completa 20 mins</h5>
+                            <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
+                            <button id="vejrutina2" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
+                            <button onclick="removeItem()" id="delete2" class="btn btn-danger" name="delete1">Eliminar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--asdasd--->
