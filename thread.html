@@ -15,6 +15,7 @@
     <link href="css/styles.css" rel="stylesheet"/>
 
     <script src="js/auth.js" defer></script>
+
 </head>
 
 <body>
@@ -23,10 +24,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
+                    class="navbar-toggler-icon"></span></button>-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="MisRutinas.html">Mis Rutinas</a></li>
@@ -79,7 +80,25 @@
         var id = window.location.search.slice(1);
         var thread = threads.find(t => t.id == id);
         var header = document.querySelector('.header');
-        var headerHtml = `
+        if(thread.comments == null){
+            var headerHtml = `
+            <h4 class="title">
+                ${thread.title}
+            </h4>
+            <h5 class="card-title">
+                ${thread.content}
+            </h5>
+            <div class="bottom">
+                <p class="timestamp">
+                    ${new Date(thread.date).toLocaleString()}
+                </p>
+                <p class="comment-count">
+                    0 comentarios
+                </p>
+            </div>
+        `
+        }else{
+            var headerHtml = `
             <h4 class="title">
                 ${thread.title}
             </h4>
@@ -95,6 +114,8 @@
                 </p>
             </div>
         `
+        }
+
         header.insertAdjacentHTML('beforeend', headerHtml)
 
         function addComment(comment) {
@@ -117,12 +138,16 @@
         }
 
         var comments = document.querySelector('.comments');
-        for (let comment of thread.comments) {
-            addComment(comment);
+        if(thread.comments != null){
+            for (let comment of thread.comments) {
+                addComment(comment);
+            }
         }
+
 
         var btn = document.querySelector('button');
         btn.addEventListener('click', function () {
+
             var txt = document.querySelector('textarea');
             var comment = {
                 content: txt.value,
@@ -131,6 +156,7 @@
             }
             addComment(comment);
             txt.value = '';
+
             thread.comments.push(comment);
             localStorage.setItem('threads', JSON.stringify(threads));
         })
