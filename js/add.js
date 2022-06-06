@@ -3,6 +3,9 @@ function addItem(){
     var texto= document.getElementById("nombre");
     if(texto.value!="") {
         comprobarBD();
+
+        //AlertAddConfirmation();
+
         var i = crearRutina(texto.value);
         /*
         var lista = document.getElementById("div-container");
@@ -91,7 +94,7 @@ function addItem(){
         elemento9.setAttribute("id","vejrutina1");
         elemento9.setAttribute("name","vejrutina1");
         elemento9.setAttribute("class","btn btn-primary");
-        elemento9.setAttribute("onclick","removeItem(this)" );
+        elemento9.setAttribute("onclick","irAEjercicios(this)" );
         elemento9.appendChild(tDentro1);
         elemento5.appendChild(elemento9);
         var elemento10=document.createElement("button");
@@ -157,7 +160,7 @@ function showListRutinas(id,nombre){
     elemento9.setAttribute("id","vejrutina1");
     elemento9.setAttribute("name","vejrutina1");
     elemento9.setAttribute("class","btn btn-primary");
-    elemento9.setAttribute("onclick","removeItem(this)" );
+    elemento9.setAttribute("onclick","irAEjercicios(this)" );
     elemento9.appendChild(tDentro1);
     elemento5.appendChild(elemento9);
     var elemento10=document.createElement("button");
@@ -272,6 +275,23 @@ function AlertAdd (){
         allowEnterKey: true,
         stopKeydownPropagation: true,
 
+    })
+}
+
+function AlertAddConfirmation (){
+    Swal.fire({
+        title: 'Añadir Rutina',
+        icon: 'question',
+        text: '¿Seguro que desea añadir esta rutina?',
+        width: '25%',
+        showCancelButton: true,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+        confirmButtonArialLabel: 'Confirmar',
+        showConfirmationButton: false,
     })
 }
 
