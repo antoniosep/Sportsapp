@@ -76,6 +76,7 @@
         </div>
     </div>
     <script src="js/foro.js"></script>
+    <script src="js/sweetAlert.js"></script>
     <script>
         var id = window.location.search.slice(1);
         var thread = threads.find(t => t.id == id);
@@ -97,6 +98,7 @@
                 </p>
             </div>
         `
+
         }else{
             var headerHtml = `
             <h4 class="title">
@@ -114,6 +116,7 @@
                 </p>
             </div>
         `
+
         }
 
         header.insertAdjacentHTML('beforeend', headerHtml)
@@ -159,7 +162,9 @@
 
             thread.comments.push(comment);
             localStorage.setItem('threads', JSON.stringify(threads));
+            AlertComentarioCrear();
         })
+
     </script>
     <style>
         body {
@@ -244,6 +249,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/sweetAlert.js"></script>
 </body>
 
 </html>

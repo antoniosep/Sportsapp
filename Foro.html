@@ -122,43 +122,57 @@
                         </ol>
                     </div>
                     <script src="js/foro.js"></script>
+                    <script src="js/sweetAlert.js"></script>
                     <script>
+                        var Alerta;
                         function guardarHilo(){
                             let tituloH = document.getElementById("titulo").value;
-                            document.getElementById("valueTitulo").innerHTML = tituloH;
-                            let cuerpoH = document.getElementById("cuerpo").value;
-                            document.getElementById("valueCuerpo").innerHTML = cuerpoH;
-                            window.alert(tituloH);
-                            var Newthreads = {
-                                id: Math.random()*100000,
-                                title: document.getElementById("valueTitulo").innerHTML,
-                                author: "Aaron",
-                                date: Date.now(),
-                                content: document.getElementById("valueCuerpo").innerHTML,
-                                comments: ""
-                            };
+                            if(tituloH != "") {
+                                document.getElementById("valueTitulo").innerHTML = tituloH;
+                                let cuerpoH = document.getElementById("cuerpo").value;
+                                document.getElementById("valueCuerpo").innerHTML = cuerpoH;
+
+                                var Newthreads = {
+                                    id: Math.random()*100000,
+                                    title: document.getElementById("valueTitulo").innerHTML,
+                                    author: "Aaron",
+                                    date: Date.now(),
+                                    content: document.getElementById("valueCuerpo").innerHTML,
+                                    comments: ""
+                                };
 
 
-                            if (localStorage && localStorage.getItem('threads')) {
-                                //threads = JSON.parse(localStorage.getItem('threads'));
-                                threads = localStorage.getItem('threads');
-                                //threads en string ok
-                                threads = threads.slice(0,threads.length-1);
-                                let tot = threads + ",{\"id\":"+Newthreads.id+",\"title\":\""+document.getElementById("valueTitulo").innerHTML+"\",\"author\":\""+
-                                    "Aaron"+ "\",\"date\":"+Date.now()+",\"content\":\""+document.getElementById("valueCuerpo").innerHTML+"\",\"comments\":"+"[]}]";
-                                //tot = JSON.parse(tot);
-                                //JSON.stringify(tot)
-                                window.alert(tot);
-                                localStorage.setItem('threads',tot);
-                                threads = JSON.parse(tot);
-                                window.alert(threads);
-                            } else {
-                                threads =  Newthreads;
-                                localStorage.setItem('threads', JSON.stringify(Newthreads));
+                                if (localStorage && localStorage.getItem('threads')) {
+
+                                    threads = localStorage.getItem('threads');
+
+                                    threads = threads.slice(0,threads.length-1);
+                                    let tot = threads + ",{\"id\":"+Newthreads.id+",\"title\":\""+document.getElementById("valueTitulo").innerHTML+"\",\"author\":\""+
+                                        "Aaron"+ "\",\"date\":"+Date.now()+",\"content\":\""+document.getElementById("valueCuerpo").innerHTML+"\",\"comments\":"+"[]}]";
+
+
+                                    localStorage.setItem('threads',tot);
+                                    threads = JSON.parse(tot);
+                                    //window.alert("Hilo creado correctamente");
+                                } else {
+                                    //threads =  Newthreads;
+                                    localStorage.setItem('threads', JSON.stringify(Newthreads));
+                                }
+                                Alerta = true;
+
+                            }else{
+                                Alerta = false;
+                            }
+
+                            if(Alerta==true){
+                                AlertHiloCrear();
+                            }else{
+                                AlertHiloError();
                             }
                         }
                         console.log(threads);
                         var container = document.querySelector('ol');
+
                         for (let thread of threads) {
                             if(thread.comments == null){
                                 var html = `
@@ -199,6 +213,7 @@
                             }
                             container.insertAdjacentHTML('beforeend', html);
                         }
+
                     </script>
 
             </div>
@@ -282,5 +297,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/sweetAlert.js"></script>
 </body>
 </html>
