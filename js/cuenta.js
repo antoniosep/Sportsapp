@@ -31,6 +31,10 @@ function cambiarPagina(cuentaJSON){
         x.textContent= "@"+cuenta["Usuario"];
     }
     document.querySelector("#emailUsuario").textContent = cuenta["Email"];
+
+    document.querySelector("#fotoUsuario").setAttribute("src", cuenta["Foto"]);
+    document.querySelector("#fotoUsuario").setAttribute("height", 100);
+    document.querySelector("#fotoUsuario").setAttribute("width", 100);
     
     buttonLogin.style.display = "none";
     buttonLogOut.style.display = "inline-flex";

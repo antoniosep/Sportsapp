@@ -27,7 +27,8 @@ function logIn(){
     var cuenta = {
         Nombre: "Antonio Sepúlveda",
         Email: "antoniosepulveda@uma.es",
-        Usuario: "antonio086"
+        Usuario: "antonio086",
+        Foto: "https://pbs.twimg.com/profile_images/932979382582415360/l8Uw4UMP_400x400.jpg"
     }
 
     localStorage.setItem("cuenta", JSON.stringify(cuenta));
