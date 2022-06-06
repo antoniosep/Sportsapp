@@ -91,6 +91,7 @@ function addItem(){
         elemento9.setAttribute("id","vejrutina1");
         elemento9.setAttribute("name","vejrutina1");
         elemento9.setAttribute("class","btn btn-primary");
+        elemento9.setAttribute("onclick","removeItem(this)" );
         elemento9.appendChild(tDentro1);
         elemento5.appendChild(elemento9);
         var elemento10=document.createElement("button");
@@ -111,7 +112,7 @@ function addItem(){
 }
 
 function showListRutinas(id,nombre){
-    
+    comprobarBD();
     var id=id;
     var lista=document.getElementById("div-container");
     var elemento=document.createElement("div");
@@ -156,6 +157,7 @@ function showListRutinas(id,nombre){
     elemento9.setAttribute("id","vejrutina1");
     elemento9.setAttribute("name","vejrutina1");
     elemento9.setAttribute("class","btn btn-primary");
+    elemento9.setAttribute("onclick","removeItem(this)" );
     elemento9.appendChild(tDentro1);
     elemento5.appendChild(elemento9);
     var elemento10=document.createElement("button");
