@@ -99,13 +99,13 @@
                     <form name="formulario">
                         <div class="header">
                         </div>
-                        <h5>Titulo</h5>
+                        <h5>Titulo *</h5>
                         <input type="text" placeholder="Escriba aqui su título" name="titulo" id="titulo" size="30"></input>
                         <h5>Cuerpo</h5>
                         <textarea type="text" class="heighttext" placeholder="Escriba aqui su cuerpo" name="cuerpo" id="cuerpo"></textarea>
                         <br>
                         <br>
-                        <button onclick="guardarHilo()">Publicar</button>
+                        <button onclick="guardarHilo()" class="btn btn-secondary">Publicar</button>
                         <p id="valueTitulo"></p>
                         <p id="valueCuerpo"></p>
                         <div class="hilos">
@@ -124,7 +124,7 @@
                     <script src="js/foro.js"></script>
                     <script src="js/sweetAlert.js"></script>
                     <script>
-                        var Alerta;
+                        //var Alerta;
                         function guardarHilo(){
                             let tituloH = document.getElementById("titulo").value;
                             if(tituloH != "") {
@@ -135,7 +135,7 @@
                                 var Newthreads = {
                                     id: Math.random()*100000,
                                     title: document.getElementById("valueTitulo").innerHTML,
-                                    author: "Aaron",
+                                    author: "Antonio",
                                     date: Date.now(),
                                     content: document.getElementById("valueCuerpo").innerHTML,
                                     comments: ""
@@ -153,26 +153,31 @@
 
                                     localStorage.setItem('threads',tot);
                                     threads = JSON.parse(tot);
+
+                                    AlertHiloCrear();
+
                                     //window.alert("Hilo creado correctamente");
                                 } else {
                                     //threads =  Newthreads;
                                     localStorage.setItem('threads', JSON.stringify(Newthreads));
                                 }
-                                Alerta = true;
+                                //Alerta = true;
 
                             }else{
-                                Alerta = false;
+                                ///Alerta = false;
                             }
-
+/*
                             if(Alerta==true){
-                                AlertHiloCrear();
+                                window.AlertHiloCrear();
                             }else{
-                                AlertHiloError();
+                                window.AlertHiloError();
                             }
-                        }
-                        console.log(threads);
-                        var container = document.querySelector('ol');
 
+ */
+                        }
+                        //console.log(threads);
+
+                        var container = document.querySelector('ol');
                         for (let thread of threads) {
                             if(thread.comments == null){
                                 var html = `
@@ -213,9 +218,7 @@
                             }
                             container.insertAdjacentHTML('beforeend', html);
                         }
-
                     </script>
-
             </div>
         </div>
 
