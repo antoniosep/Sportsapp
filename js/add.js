@@ -1,17 +1,7 @@
-
-
-i = 0;
-valor = 0;
-var BDMisRutinas = null;
-if (localStorage && localStorage.getItem('BDMisRutinas')) {
-    BDMisRutinas = JSON.parse(localStorage.getItem('BDMisRutinas'));
-} else {
-    localStorage.setItem('BDMisRutinas',BDMisRutinas );
-}
 function addItem(){
     var texto= document.getElementById("nombre");
+    var i = crearRutina(texto.value);
     if(texto.value!="") {
-        i++;
         var lista = document.getElementById("div-container");
         var texto = document.getElementById("nombre");
         var elemento = document.createElement("div");
@@ -55,19 +45,11 @@ function addItem(){
         //elemento.appendChild(document.createTextNode(texto.value));
         //elemento.appendChild(document.createNode());
         lista.appendChild(elemento);
-        var set = [
-            {
-                nombre: texto.value,
-                id: i,
-            }
-        ]
-        localStorage.setItem('BDMisRutinas', JSON.stringify(set));
-
-
     }
 }
 
 function showListRutinas(id,nombre){
+    comprobarBD();
     console.log(id);
     console.log(nombre);
     var id=id;

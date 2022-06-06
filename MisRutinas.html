@@ -16,7 +16,8 @@
 
     <script src="js/redirigirLogin.js"></script>
     <script src="js/auth.js" defer></script>
-    <script src="js/iniciarMisRutinas.js"></script>
+    <script src="js/iniciarMisRutinas.js" ></script>
+    <script src="js/add.js"></script>
 </head>
 <body>
 <main class="flex-shrink-0">
@@ -118,15 +119,15 @@
             <ol>
             </ol>
         </div>
-        <script src="js/add.js"></script>
+        
         <script>
-            console.log(BDMisRutinas);
-            var container = document.querySelector('ol');
-            for (let item of BDMisRutinas) {
-                var id=item.id;
-                var nombre=item.nombre;
-               showListRutinas(id,nombre);
-            }
+            //console.log(BDMisRutinas);
+            //var container = document.querySelector('ol');
+            comprobarBD();
+            rutinasBD = new Map(JSON.parse(localStorage.getItem("rutinas")));
+            rutinasBD.forEach((value, key)=>{
+                showListRutinas(key, value["Titulo"]);
+            });
         </script>
 
     </div>

@@ -1,15 +1,18 @@
-if(localStorage.getItem("MisRutinas")=="null"){
-    var rutinas = new Map();
-    localStorage.setItem("rutinas", JSON.stringify(Array.from(rutinas)));
-    localStorage.setItem("nuevoIndex", 0);
+function comprobarBD(){
+    if(localStorage.getItem("rutinas")==null){
+        var rutinas = new Map();
+        localStorage.setItem("rutinas", JSON.stringify(Array.from(rutinas)));
+        localStorage.setItem("nuevoIndex", 0);
+    }
 }
 
 function crearRutina(titulo){
+    console.log("crear");
     rutinasBD = new Map(JSON.parse(localStorage.getItem("rutinas")));
-    index = localStorage.getItem("nuevoIndex");
+    index = parseInt(localStorage.getItem("nuevoIndex"), 10);
 
     var rutina = {
-        Titulo: "titulo",
+        Titulo: titulo,
         Ejercicios: JSON.stringify(Array.from(new Map()))
     }
 
@@ -18,6 +21,8 @@ function crearRutina(titulo){
     rutinasBD.set(idRutina, rutina);
     localStorage.setItem("rutinas", JSON.stringify(Array.from(rutinasBD)));
     localStorage.setItem("nuevoIndex", index+1);
+
+    return idRutina;
 }
 
 function borrarRutina(idRutina){
