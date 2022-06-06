@@ -68,7 +68,7 @@ function addItem(){
 }
 
 function showListRutinas(id,nombre){
-   console.log(id);
+    console.log(id);
     console.log(nombre);
     var id=id;
     var lista=document.getElementById("div-container");
