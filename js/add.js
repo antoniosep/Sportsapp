@@ -302,6 +302,22 @@ function AlertAdd() {
     })
 }
 
+function AlertAddEjercicio() {
+    Swal.fire({
+        title: 'Añadir Ejercicio',
+        icon: 'success',
+        text: 'Ejercicio añadido exitosamente',
+        width: '25%',
+        showCancelButton: false,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+
+    })
+}
+
 function AlertAddConfirmation() {
     Swal.fire({
         title: 'Añadir Rutina',
@@ -335,4 +351,5 @@ function anyadirARutina(elem){
     localStorage.setItem("flagAnyadir", false);
     localStorage.removeItem("ejercicio");
     actualizarRutinas();
+    AlertAddEjercicio();
 }

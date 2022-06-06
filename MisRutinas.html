@@ -72,7 +72,7 @@
         </div>
     </header>
 
-    <div class = "container" style="padding-bottom: 5px;">
+    <div class = "container my-3" style="padding-bottom: 5px;">
         <div class="row justify-content-md-center">
             <div class="col-lg-1  themed-grid-col align-self-center">
                 <label>Nombre:</label>
@@ -86,45 +86,6 @@
         </div>
     </div>
     <div id="div-container">
-        <div class="card mb-3 mx-auto col-10 col-lg-8">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="flexiones.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Rutina de pecho/espalda</h5>
-                        <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                        <button onclick="anyadirARutina(this)" id="anyadirARutina" name="anyadirARutina" class="btn btn-primary" style="display: none;">Añadir</button>
-                        <button onclick="irAEjercicios(this)" id="vejrutina" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
-                        <button onclick="removeItem(this)" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-3 mx-auto col-10 col-lg-8">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="abs.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Rutina completa 20 mins</h5>
-                        <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                        <button onclick="anyadirARutina(this)" id="anyadirARutina" name="anyadirARutina" class="btn btn-primary" style="display: none;">Añadir</button>
-                        <button onclick="irAEjercicios(this)" id="vejrutina" name="vejrutina2" class="btn btn-primary">Ver Ejercicios Rutina</button>
-                        <button onclick="removeItem(this)" id="delete2" class="btn btn-danger" name="delete2">Eliminar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--asdasd--->
-        <div class="main">
-            <ol>
-            </ol>
-        </div>
-        
         <script>
             //console.log(BDMisRutinas);
             //var container = document.querySelector('ol');
@@ -134,7 +95,6 @@
                 showListRutinas(key, value["Titulo"]);
             });
         </script>
-
     </div>
 
         <!-- Footer-->

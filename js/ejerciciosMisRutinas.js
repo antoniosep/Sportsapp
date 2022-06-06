@@ -12,6 +12,23 @@ function actualizarEjercicios() {
     Titulo.textContent = "Ejercicios de la rutina: " + rutina["Titulo"];
 
     localStorage.setItem("Ejercicios", rutina["Ejercicios"]);
+
+    if(rutina["Ejercicios"]=="[]"){
+        var lista = document.getElementById("div-container");
+        var elemento = document.createElement("div");
+        elemento.setAttribute("class", "container");
+        var elemento2 = document.createElement("h2");
+        var info = document.createTextNode("Para añadir nuevos ejercicios vaya a Rutinas de la Comunidad");
+        var elemento3 = document.createElement("a");
+        var enlace = document.createTextNode("Ejercicios de la Comunidad");
+        elemento3.setAttribute("href", "EjerciciosComunidad.html");
+        elemento3.appendChild(enlace);
+        elemento3.setAttribute("class", "btn btn-primary");
+        elemento.appendChild(elemento2);
+        elemento.appendChild(elemento3);
+        elemento2.appendChild(info);
+        lista.appendChild(elemento);
+    }
 }
 
 function mostrarEjercicios() {
@@ -83,8 +100,27 @@ function mostrarEjercicios() {
 function removeItem(elem){
     var parent = elem.parentNode.parentNode.parentNode.parentNode;
     var id = parent.getAttribute("id");
-
+    console.log(parent);
+    console.log(parent.parentNode);
     borrarEjercicioRutina(localStorage.getItem("idRutina"), id);
     parent.parentNode.removeChild(parent);
     actualizarEjercicios();
+    AlertEliminarExito();
+}
+
+function AlertEliminarExito() {
+    Swal.fire({
+        title: 'Ejercicio Eliminado',
+        icon: 'success',
+        text: 'Ejercicio Eliminad con éxito',
+        width: '25%',
+        timer: 5000,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+        confirmButtonArialLabel: 'Aceptar',
+        showConfirmationButton: false,
+    })
 }
