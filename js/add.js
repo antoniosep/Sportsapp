@@ -75,8 +75,7 @@ function showListRutinas(id,nombre){
     var elemento=document.createElement("div");
     //elemento.setAttribute("id",texto.value);
     elemento.setAttribute("id",id);
-    elemento.setAttribute("class","card mb-3 mx-auto");
-    elemento.setAttribute("style","width: 1000px;");
+    elemento.setAttribute("class","card mb-3 mx-auto col-10 col-lg-8");
     var elemento2=document.createElement("div");
     elemento2.setAttribute("class","row g-0");
     elemento.appendChild(elemento2);
