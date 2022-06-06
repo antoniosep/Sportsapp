@@ -49,7 +49,7 @@ function anyadirEjercicioRutina(idRutina, ejercicio){
 function borrarEjercicioRutina(idRutina, ejercicioId){
     rutinasBD = new Map(JSON.parse(localStorage.getItem("rutinas")));
 
-    rutina = rutinaBD.get(idRutina);
+    rutina = rutinasBD.get(idRutina);
     Ejercicios = new Map(JSON.parse(rutina["Ejercicios"]))
     Ejercicios.delete(ejercicioId);
 

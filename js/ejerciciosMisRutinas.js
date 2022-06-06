@@ -55,25 +55,18 @@ function mostrarEjercicios() {
         elemento6.appendChild(Nombre);
         var elemento7 = document.createElement("p");
         elemento7.setAttribute("class", "card-text");
+        var Descripcion = document.createTextNode(ejercicioInfo["Descripcion"]);
         var elemento8 = document.createElement("small");
         elemento8.setAttribute("class", "text-muted");
+        elemento8.appendChild(Descripcion);
         elemento7.appendChild(elemento8);
         elemento5.appendChild(elemento7);
-        var elemento9 = document.createElement("button");
-        var tDentro1 = document.createTextNode("Ver Ejercicio");
-
-        elemento9.setAttribute("id", "vejrutina1");
-        elemento9.setAttribute("name", "vejrutina1");
-        elemento9.setAttribute("class", "btn btn-primary");
-        //elemento9.setAttribute("onclick", "irAEjercicios(this)");
-        elemento9.appendChild(tDentro1);
-        elemento5.appendChild(elemento9);
         var elemento10 = document.createElement("button");
         var tDentro2 = document.createTextNode("Eliminar");
         elemento10.setAttribute("id", "delete1");
         elemento10.setAttribute("name", "delete1");
         elemento10.setAttribute("class", "btn btn-danger");
-        //elemento10.setAttribute("onclick", "removeItem(this)");
+        elemento10.setAttribute("onclick", "removeItem(this)");
         elemento10.appendChild(tDentro2);
         elemento5.appendChild(elemento10);
 
@@ -85,4 +78,13 @@ function mostrarEjercicios() {
         //elemento.appendChild(document.createNode());
         lista.appendChild(elemento);
     });
+}
+
+function removeItem(elem){
+    var parent = elem.parentNode.parentNode.parentNode.parentNode;
+    var id = parent.getAttribute("id");
+
+    borrarEjercicioRutina(localStorage.getItem("idRutina"), id);
+    parent.parentNode.removeChild(parent);
+    actualizarEjercicios();
 }

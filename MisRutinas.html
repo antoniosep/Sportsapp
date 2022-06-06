@@ -16,6 +16,7 @@
 
     <script src="js/redirigirLogin.js"></script>
     <script src="js/auth.js" defer></script>
+    <script src="js/anyadirEjercicioRutina.js" defer></script>
     <script src="js/accesoMisRutinas.js" ></script>
     <script src="js/add.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -94,7 +95,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Rutina de pecho/espalda</h5>
                         <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                        <button onclick="irAEjercicios(this)" id="vejrutina1" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
+                        <button onclick="anyadirARutina(this)" id="anyadirARutina" name="anyadirARutina" class="btn btn-primary" style="display: none;">Añadir</button>
+                        <button onclick="irAEjercicios(this)" id="vejrutina" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
                         <button onclick="removeItem(this)" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
                     </div>
                 </div>
@@ -110,7 +112,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Rutina completa 20 mins</h5>
                         <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                        <button onclick="irAEjercicios(this)" id="vejrutina2" name="vejrutina2" class="btn btn-primary">Ver Ejercicios Rutina</button>
+                        <button onclick="anyadirARutina(this)" id="anyadirARutina" name="anyadirARutina" class="btn btn-primary" style="display: none;">Añadir</button>
+                        <button onclick="irAEjercicios(this)" id="vejrutina" name="vejrutina2" class="btn btn-primary">Ver Ejercicios Rutina</button>
                         <button onclick="removeItem(this)" id="delete2" class="btn btn-danger" name="delete2">Eliminar</button>
                     </div>
                 </div>
