@@ -17,118 +17,102 @@
     <script src="js/redirigirLogin.js"></script>
     <script src="js/auth.js" defer></script>
 </head>
-
 <body>
-    <main class="flex-shrink-0">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="MisRutinas.html">Mis Rutinas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="RutinasComunidad.html">Rutinas de la
-                                Comunidad</a></li>
-                        <li class="nav-item"><a class="nav-link" href="EjerciciosComunidad.html">Ejercicios de la
-                                Comunidad</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Nutricion.html">Nutrición</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Foro.html">Foro</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">Ayuda</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Mi Perfil</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                <li><a class="dropdown-item" href="Cuenta.html">Cuenta</a></li>
-                                <li><a class="dropdown-item" id="iniciarSesionButton" style="display: inline-flex;"
-                                        href="#">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item" id="cerrarSesionButton" style="display: none;"
-                                        href="#">Cerrar Sesión</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Header-->
-        <header class="bg-gradient py-3">
-            <div class="container px-10">
-                <div class="row gx-5 align-items-center justify-content-center">
-                    <div class="col-lg-8 col-xl-7 col-xxl-6">
-                        <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-black mb-2">Mis rutinas</h1>
-                            <p class="lead fw-normal text-black-50 mb-4">Aquí se muestran las rutinas que guardes como
-                                tuyas o que crees.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </header>
-
-        <div class = "container" style="padding-bottom: 5px;">
-            <div class="row justify-content-md-center">
-                <div class="col-lg-1  themed-grid-col align-self-center">
-                    <label>Nombre:</label>
-                </div>
-                <div class="col-md-5 themed-grid-col align-self-start">
-                    <input type="text" class="form-control" id="nombre" name="nombre">
-                </div>
-                <div class="col-lg-2 themed-grid-col align-self-center">
-                    <button onclick="addItem()" id="addRutina" name="addRutina">Nueva Rutina</button>
-                </div>
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container px-5">
+            <a class="navbar-brand" href="main.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="MisRutinas.html">Mis Rutinas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="RutinasComunidad.html">Rutinas de la Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="EjerciciosComunidad.html">Ejercicios de la Comunidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Nutricion.html">Nutrición</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Foro.html">Foro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi Perfil</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                            <li><a class="dropdown-item" href="Cuenta.html">Cuenta</a></li>
+                            <li><a class="dropdown-item" href="portfolio-item.html">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div id="div-container">
-            <div class="card mb-3 mx-auto" style="width: 1000px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="flexiones.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Rutina de pecho/espalda</h5>
-                            <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                            <button id="vejrutina1" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
-                            <button onclick="removeItem()" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
-                        </div>
+    </nav>
+    
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2 ">Mis rutinas</h1>
                     </div>
                 </div>
+               
             </div>
-            <div class="card mb-3 mx-auto" style="width: 1000px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="abs.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Rutina completa 20 mins</h5>
-                            <p class="card-text"><small class="text-muted">Last updated 2 months ago</small></p>
-                            <button id="vejrutina2" name="vejrutina1" class="btn btn-primary">Ver Ejercicios Rutina</button>
-                            <button onclick="removeItem()" id="delete2" class="btn btn-danger" name="delete1">Eliminar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--asdasd--->
-            <div class="main">
-                <ol>
-                </ol>
-            </div>
-            <script src="js/add.js"></script>
-            <script>
-                console.log(BDMisRutinas);
-                var container = document.querySelector('ol');
-                for (let item of BDMisRutinas) {
-                    showListRutinas();
-                }
-            </script>
-
         </div>
+    </header>
+
+
+    <div class="row mb-3">
+        <div class="col-md-1  themed-grid-col align-self-start">
+            <label>Nombre:</label>
+        </div>
+        <div class="col-md-8 themed-grid-col align-self-start">
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="col-md-3 themed-grid-col align-self-center">
+            <button onclick="addItem()" id="addRutina"  name="addRutina">Nueva Rutina</button>
+        </div>
+      </div>
+    <div id="div-container">
+    <div class="row mb-3">
+        <div class="col-md-3 themed-grid-col align-self-start">
+            <img src="flexiones.jpg" width="250" height="120">
+        </div>
+        <div class="col-md-4 themed-grid-col align-self-center">Rutina de pecho/espalda</div>
+        <div class="col-md-2 themed-grid-col align-self-center">
+            <button id="vejrutina1" name="vejrutina1">Ver Ejercicios Rutina</button>
+        </div>
+        <div class="col-md-3 themed-grid-col align-self-center">
+            <button onclick="removeItem()" id="delete1" class="btn btn-danger" name="delete1">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-3 themed-grid-col ">
+            <img src="abs.jpg" width="250" height="120">
+        </div>
+        <div class="col-md-4 themed-grid-col align-self-center">Rutina completa 20 mins</div>
+        <div class="col-md-2 themed-grid-col align-self-center">
+            <button  id="vejrutina2" name="vejrutina2">Ver Ejercicios Rutina</button>
+        </div>
+        <div class="col-md-3 themed-grid-col align-self-center">
+            <button onclick="removeItem()" id="delete2" class="btn btn-danger" name="delete2">Eliminar</button>
+        </div>
+      </div>
+        <!--asdasd--->
+        <div class="main">
+            <ol>
+            </ol>
+        </div>
+        <script src="js/add.js"></script>
+        <script>
+            console.log(BDMisRutinas);
+            var container = document.querySelector('ol');
+            for (let item of BDMisRutinas) {
+                var id=item.id;
+                var nombre=item.nombre;
+               showListRutinas(id,nombre);
+            }
+        </script>
+
+    </div>
 
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
@@ -154,5 +138,4 @@
         <script src="js/add.js"></script>
     </main>
 </body>
-
 </html>
