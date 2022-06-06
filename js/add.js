@@ -1,3 +1,4 @@
+
 function addItem(){
     var texto= document.getElementById("nombre");
     var i = crearRutina(texto.value);
@@ -172,7 +173,7 @@ function showListRutinas(id,nombre){
 
 }
 
-function removeItem(){
+function removeItem(elem){
     //confirm("¿Seguro que desea eliminar la rutina?")
    /* Swal.fire({
         title: 'Are you sure?',
@@ -191,12 +192,7 @@ function removeItem(){
             )
         }
     })*/
-    var lista=document.getElementById("div-container");
-    var e=document.getElementById(this.i);
-    var pos=e.getAttribute("id");
-    console.log(pos);
-    var element=document.getElementById(pos);
-    lista.removeChild(element);
-    i--;
-
+    parent = elem.parentNode.parentNode.parentNode.parentNode;
+    borrarRutina(parent.getAttribute("id"))
+    parent.parentNode.removeChild(parent);
 }
