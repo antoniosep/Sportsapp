@@ -86,7 +86,7 @@
                         <p class="fs-5 mb-4"> - 100 flexiones diarias.</p>
                         <p class="fs-5 mb-4"> - 100 abdominales diarios.</p>
                         <p class="fs-5 mb-4"> - 1 partido de fútbol con vuestros amigos. </p>
-                        <h2 class="fw-bolder mb-4 mt-5">Vuestros Comentarios</h2>
+                        <h1 class="fw-bolder mb-4 mt-5">Vuestros Comentarios</h1>
                         <p class="fs-5 mb-4">La sección más importante de nuestra página, donde vosotros, los usuarios
                             nos dais vuestras opiniones y recomendaciones para mejorar nuestra página.</p>
                         <p class="fs-5 mb-4">Además podeis interactuar con la comunidad BE FIT! publicando vuestros
@@ -94,14 +94,16 @@
                     </section>
                 </article>
                 <!-- Comments section-->
+                <h2 class="fw-bolder mb-4 mt-5">Crear un nuevo hilo</h2>
                 <div class="main2">
                     <form name="formulario">
                         <div class="header">
                         </div>
                         <h5>Titulo</h5>
-                        <input type="text" placeholder="Escriba aqui su título" name="titulo" id="titulo"></input>
+                        <input type="text" placeholder="Escriba aqui su título" name="titulo" id="titulo" size="30"></input>
                         <h5>Cuerpo</h5>
-                        <input type="text" placeholder="Escriba aqui su título" name="cuerpo" id="cuerpo"></input>
+                        <textarea type="text" class="heighttext" placeholder="Escriba aqui su cuerpo" name="cuerpo" id="cuerpo"></textarea>
+                        <br>
                         <br>
                         <button onclick="guardarHilo()">Publicar</button>
                         <p id="valueTitulo"></p>
@@ -113,7 +115,7 @@
 
 
                     <!-- Comment with nested comments-->
-
+                <h2 class="fw-bolder mb-4 mt-5">Hilos de la comunidad</h2>
                     <!-- Single comment-->
                     <div class="main">
                         <ol>
@@ -234,6 +236,10 @@
         background-color: whitesmoke;
         padding: 10px 15px;
     }
+    .main2 {
+        background-color: whitesmoke;
+        padding: 10px 15px;
+    }
 
     .row {
         padding: 5px 0;
@@ -247,6 +253,12 @@
 
     .timestamp {
         padding-right: 10px;
+    }
+
+    .heighttext{
+        height:80px;
+        width: 400px;
+        padding: 0;
     }
 </style>
 <!-- Footer-->
