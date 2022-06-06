@@ -1,8 +1,9 @@
 
 function addItem(){
     var texto= document.getElementById("nombre");
-    var i = crearRutina(texto.value);
     if(texto.value!="") {
+        comprobarBD();
+        var i = crearRutina(texto.value);
         /*
         var lista = document.getElementById("div-container");
         var texto = document.getElementById("nombre");
@@ -102,11 +103,15 @@ function addItem(){
         elemento5.appendChild(elemento10);
 
         lista.appendChild(elemento);
+
+        AlertAdd()
+    }else{
+        AlertTextoError();
     }
 }
 
 function showListRutinas(id,nombre){
-    comprobarBD();
+    
     var id=id;
     var lista=document.getElementById("div-container");
     var elemento=document.createElement("div");
@@ -192,7 +197,87 @@ function removeItem(elem){
             )
         }
     })*/
+
+    //AlertEliminar();
+
     parent = elem.parentNode.parentNode.parentNode.parentNode;
     borrarRutina(parent.getAttribute("id"))
     parent.parentNode.removeChild(parent);
+
+    AlertEliminarExito();
+}
+
+function AlertEliminarExito (){
+    Swal.fire({
+        title: 'Rutina Eliminada',
+        icon: 'success',
+        text: 'Rutina Eliminada con éxito',
+        width: '25%',
+        timer: 5000,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+        confirmButtonArialLabel: 'Aceptar',
+        showConfirmationButton: false,
+    })
+}
+
+function AlertEliminar (){
+    Swal.fire({
+        title: 'Eliminar Rutina',
+        icon: 'question',
+        text: '¿Seguro que desea eliminar esa rutina?',
+        width: '25%',
+        showCancelButton: true,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+        confirmButtonArialLabel: 'Confirmar',
+        showConfirmationButton: false,
+    })
+}
+
+function AlertTextoError (){
+    Swal.fire({
+        title: 'Añadir Rutina',
+        icon: 'error',
+        text: 'Campo de texto vacío',
+        width: '25%',
+        showCancelButton: false,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+
+    })
+}
+
+function AlertAdd (){
+    Swal.fire({
+        title: 'Añadir Rutina',
+        icon: 'success',
+        text: 'Rutina añadida exitosamente',
+        width: '25%',
+        showCancelButton: false,
+        autoHeight: true,
+        position: 'top',
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        stopKeydownPropagation: true,
+
+    })
+}
+
+function irAEjercicios(elem){
+
+    var parent = elem.parentNode.parentNode.parentNode.parentNode;
+    var id = parent.getAttribute("id")
+    localStorage.setItem("idRutina", id);
+
+    document.location.href = "EjerciciosMisRutinas.html"
 }
