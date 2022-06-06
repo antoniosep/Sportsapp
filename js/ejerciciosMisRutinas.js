@@ -1,12 +1,22 @@
-var idRutina = localStorage.getItem("idRutina");
+actualizarEjercicios();
+mostrarEjercicios();
 
-rutinasBD = new Map(JSON.parse(localStorage.getItem("rutinas")))
+function actualizarEjercicios() {
+    var idRutina = localStorage.getItem("idRutina");
 
-var rutina = rutinasBD.getItem(idRutina);
+    rutinasBD = new Map(JSON.parse(localStorage.getItem("rutinas")))
 
-var Titulo = document.querySelector("#nombreRutina");
-Titulo.textContent = "Ejercicios de la rutina "+rutina["Titulo"];
+    var rutina = rutinasBD.get(idRutina);
 
-function mostrarEjercicios(){
-    
+    var Titulo = document.querySelector("#nombreRutina");
+    Titulo.textContent = "Ejercicios de la rutina: " + rutina["Titulo"];
+
+    localStorage.setItem("ejercicios", rutina["Ejercicios"]);
+}
+
+function mostrarEjercicios() {
+    rutinasBD = new Map(JSON.parse(localStorage.getItem("Ejercicios")));
+    rutinasBD.forEach((value, key) => {
+        showListRutinas(key, value["Titulo"]);
+    });
 }
