@@ -97,7 +97,7 @@ function addItem(){
         elemento10.setAttribute("id","delete1");
         elemento10.setAttribute("name","delete1");
         elemento10.setAttribute("class","btn btn-danger");
-        elemento10.setAttribute("onclick","removeItem()");
+        elemento10.setAttribute("onclick","removeItem(this)");
         elemento10.appendChild(tDentro2);
         elemento5.appendChild(elemento10);
 
@@ -158,7 +158,7 @@ function showListRutinas(id,nombre){
     elemento10.setAttribute("id","delete1");
     elemento10.setAttribute("name","delete1");
     elemento10.setAttribute("class","btn btn-danger");
-    elemento10.setAttribute("onclick","removeItem()");
+    elemento10.setAttribute("onclick","removeItem(this)");
     elemento10.appendChild(tDentro2);
     elemento5.appendChild(elemento10);
 
